@@ -1,0 +1,52 @@
+/* Masculine futuristic style for PROYECTO_XML project */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at center, #1ef501, #07b0eeb0);
+  color: #1ca3ec;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+h2, h3 {
+  color: #1ca3ec;
+  text-shadow: 0 0 15px #1ca3ec;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: rgba(10, 10, 26, 0.9);
+  box-shadow: 0 0 40px #1ca3ec, 0 0 80px #1ca3ec inset;
+  border-radius: 15px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #1ca3ec;
+}
+
+th {
+  background-color: #002b36;
+  color: #1ca3ec;
+}
+
+td {
+  color: #ffffff;
+}
+
+.info-general {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: rgba(10, 10, 26, 0.9);
+  border: 3px solid #1ca3ec;
+  box-shadow: 0 0 40px #1ca3ec, 0 0 80px #1ca3ec inset;
+  border-radius: 15px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"> <!-- Definimos la codificación de caracteres como UTF-8 -->
+  <title>Login</title> <!-- Título que aparece en la pestaña del navegador -->
+  <link rel="stylesheet" href="css/login.css"> <!-- Enlace a la hoja de estilos externa -->
+
+  <!-- SDK de Google Identity Services para el botón de inicio de sesión con Google -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Iniciar sesión</h2> <!-- Título de la sección de login -->
+
+    <!-- Formulario de login tradicional -->
+    <input type="text" id="usuario" placeholder="Usuario" /> <!-- Campo para el nombre de usuario -->
+    <input type="password" id="clave" placeholder="Contraseña" /> <!-- Campo para la contraseña -->
+    <button onclick="loginTradicional()">Iniciar </button> <!-- Botón que ejecuta la función de login tradicional -->
+
+    <!-- Separador visual entre métodos de login -->
+    <div class="divider"><span>O</span></div>
+
+    <!-- Configuración inicial del cliente de Google para el flujo de autenticación -->
+    <div id="g_id_onload"
+         data-client_id="835275751926-m00dt0aggljk9mbcb54ipfdjschccf5e.apps.googleusercontent.com"
+         data-context="signin"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+
+    <!-- Botón de Google Sign-In que se genera automáticamente -->
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="rectangular"
+         data-theme="outline"
+         data-text="sign_in_with"
+         data-size="large">
+    </div>
+  </div>
+
+  <script>
+    /**
+     * Función para manejar el login tradicional.
+     * Comprueba usuario y contraseña estáticos,}
+     * guarda datos en localStorage y redirige a index.html.
+     */
+    function loginTradicional() {
+      const user = document.getElementById("usuario").value;   // Obtenemos el valor del campo usuario
+      const pass = document.getElementById("clave").value;     // Obtenemos el valor del campo contraseña
+
+      if (user === "pamela" && pass === "1234") {
+        alert("Login exitoso como " + user);  // Mensaje de éxito
+        // Guardamos datos de usuario en localStorage
+        localStorage.setItem("nombre", user);
+        localStorage.setItem("email", user + "@example.com");
+        // Redirigimos a la página principal
+        window.location.href = "index.html";
+      } else {
+        alert("Usuario o contraseña incorrectos");  // Mensaje de error
+      }
+    }
+
+    /**
+     * Función callback que maneja la respuesta de Google Sign-In.
+     * Decodifica el JWT, extrae datos del usuario,
+     * los guarda en localStorage y redirige a index.html.
+     */
+    function handleCredentialResponse(response) {
+      const jwt = response.credential;                 // JWT devuelto por Google
+      const payload = JSON.parse(atob(jwt.split('.')[1])); // Decodificamos el payload
+
+      // Guardamos nombre, correo y foto en localStorage
+      localStorage.setItem("nombre", payload.name);
+      localStorage.setItem("email", payload.email);
+      localStorage.setItem("foto", payload.picture);
+
+      // Redirigimos a la página principal tras el login
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>

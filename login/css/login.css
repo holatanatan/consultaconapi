@@ -1,0 +1,122 @@
+/* Unified masculine futuristic style for login page */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+   background: radial-gradient(circle at center, #1ef501, #07b0eeb0);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1ca3ec;
+  overflow: hidden;
+}
+
+.login-container {
+  background-color: rgba(10, 10, 26, 0.9);
+  padding: 50px 60px;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 0 40px #1ca3ec, 0 0 80px #1ca3ec inset;
+  text-align: center;
+  position: relative;
+  border: 3px solid #1ca3ec;
+  backdrop-filter: blur(12px);
+  transition: box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+  box-shadow: 0 0 50px #3db0ff, 0 0 100px #3db0ff inset;
+}
+
+.login-container h2 {
+  margin-bottom: 30px;
+  color: #1ca3ec;
+  font-weight: 700;
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px #1ca3ec;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 18px 24px;
+  margin: 20px 0;
+  border: 3px solid #1ca3ec;
+  border-radius: 18px;
+  box-sizing: border-box;
+  font-size: 20px;
+  background-color: #0a0a1a;
+  color: #1ca3ec;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  text-shadow: 0 0 8px #1ca3ec;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #3db0ff;
+  outline: none;
+  box-shadow: 0 0 20px #3db0ff;
+  background-color: #050518;
+}
+
+button {
+  width: 100%;
+  padding: 18px;
+  margin-top: 35px;
+  background-color: #1ca3ec;
+  color: #0a0a1a;
+  border: none;
+  border-radius: 25px;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 0 25px #1ca3ec;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+button:hover {
+  background-color: #3db0ff;
+  box-shadow: 0 0 40px #3db0ff, 0 0 50px #3db0ff inset;
+}
+
+.divider {
+  margin: 40px 0;
+  position: relative;
+  text-align: center;
+}
+
+.divider span {
+  background: rgba(10, 10, 26, 0.9);
+  padding: 0 20px;
+  color: #1ca3ec;
+  font-size: 18px;
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  text-shadow: 0 0 10px #1ca3ec;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: #1ca3ec;
+  box-shadow: 0 0 15px #1ca3ec;
+  z-index: 0;
+}
+
+.g_id_signin {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
